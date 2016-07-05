@@ -7,6 +7,9 @@ import bodyParser from 'body-parser';
 import { getDotenv } from '../universal/utils/dotenv';
 import SSR from './server.render';
 
+Object.assign = null;
+Object.assign = require('object-assign');
+
 getDotenv();
 
 const PROD = process.env.NODE_ENV === 'production';
