@@ -1,10 +1,15 @@
 {
-  "name": "react-tutorial",
-  "version": "0.0.0",
-  "private": true,
-  "license": "see LICENSE file",
-  "description": "Code from the React tutorial.",
-  "main": "server.js",
+  "name": "boilerplate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "node -r babel-register -r babel-polyfill ./config/webpack/webpack-dev-server.js",
+    "test": "npm test"
+  },
+  "author": "Shawn Hu",
+  "license": "MIT",
   "dependencies": {
     "autobind-decorator": "^1.3.3",
     "babel-polyfill": "^6.9.1",
@@ -13,14 +18,28 @@
     "cors": "^2.7.1",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "jquery": "^3.0.0",
+    "extract-text-webpack-plugin": "^2.0.0-beta.3",
+    "fela": "^1.1.0",
+    "fela-beautifier": "^1.1.0",
+    "fela-font-renderer": "^1.1.0",
+    "fela-perf": "^1.1.0",
+    "fela-plugin-fallback-value": "^1.1.0",
+    "fela-plugin-logger": "^1.1.0",
+    "fela-plugin-lvha": "^1.1.0",
+    "fela-plugin-prefixer": "^1.1.0",
+    "fela-plugin-unit": "^1.1.0",
+    "fela-plugin-validator": "^1.1.0",
+    "http-proxy": "^1.14.0",
     "object-assign": "^4.1.0",
     "piping": "^1.0.0-rc.2",
-    "react": "^15.2.0",
-    "react-dom": "^15.2.0"
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-fela": "^2.1.0",
+    "react-mdl": "^1.7.1",
+    "universal-webpack": "^0.1.33"
   },
   "devDependencies": {
-    "ava": "^0.15.2",
+    "async": "^2.0.1",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -30,34 +49,14 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "cross-env": "^1.0.8",
-    "enzyme": "^2.4.1",
-    "react-addons-test-utils": "^15.2.0",
+    "css-loader": "^0.24.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.0.0",
     "react-hot-loader": "^3.0.0-beta.2",
-    "redbox-react": "^1.2.10",
-    "webpack": "^2.1.0-beta.15",
+    "source-map-support": "^0.4.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.1.0-beta.20",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.0"
-  },
-  "scripts": {
-    "start": "cross-env NODE_ENV=development node ./src/server/server.babel.js",
-    "test": "ava **/*.test.js -r babel-register -r babel-polyfill"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
-  },
-  "keywords": [
-    "react",
-    "tutorial",
-    "comment",
-    "example"
-  ],
-  "author": "petehunt",
-  "bugs": {
-    "url": "https://github.com/reactjs/react-tutorial/issues"
-  },
-  "homepage": "https://github.com/reactjs/react-tutorial",
-  "ava": {
-    "babel": "inherit"
   }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import Html from './Html';
-import { renderToStaticMarkup } from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 import {join, basename} from 'path';
 
-
-function renderApp(res) {
+function renderApp(req, res, chunks) {
   // Needed so some components can render based on location
   try {
-    const htmlStream = renderToStaticMarkup(<Html
+    const htmlStream = renderToString(<Html
+      chunks={chunks}
       title="boilerplate"
     />);
     res.write('<!DOCTYPE html>');
@@ -19,7 +19,6 @@ function renderApp(res) {
   }
 }
 
-export default async function SSR(req, res) {
-  // res.send('Hello World!');
-    renderApp(res);
+export default async function SSR(req, res, chunks) {
+  renderApp(req, res, chunks);
 }

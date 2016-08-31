@@ -1,16 +1,12 @@
 import express from 'express';
 import webpack from 'webpack';
-import config from '../../config/webpack/webpack.dev';
 import compression from 'compression';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import { getDotenv } from '../universal/utils/dotenv';
-import SSR from './server.render';
+// import SSR from './server.render';
 
 Object.assign = null;
-Object.assign = require('object-assign');
-
-getDotenv();
+Object.assign = require('object-assign'); //react server render
 
 const PROD = process.env.NODE_ENV === 'production';
 
